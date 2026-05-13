@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motor Vehicle Collisions Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">NYC Crash Analytics</p>
+          <h1>Motor Vehicle Collisions Dashboard</h1>
+          <p>Interactive analytics for the NYC motor vehicle collisions dataset.</p>
+        </div>
+        <div class="hero-meta">
+          <p>Source: <strong>Motor_Vehicle_Collisions_-_Crashes.csv</strong></p>
+          <p>Built from crash date, injuries, fatalities, boroughs, vehicle types and contributing factors.</p>
+        </div>
+      </header>
+
+      <section class="cards" id="summary-cards">
+        <article>
+          <h2 id="total-crashes">—</h2>
+          <p>Total crashes</p>
+        </article>
+        <article>
+          <h2 id="total-injured">—</h2>
+          <p>Total injured</p>
+        </article>
+        <article>
+          <h2 id="total-killed">—</h2>
+          <p>Total killed</p>
+        </article>
+        <article>
+          <h2 id="top-borough">—</h2>
+          <p>Top borough</p>
+        </article>
+        <article>
+          <h2 id="top-factor">—</h2>
+          <p>Top contributing factor</p>
+        </article>
+      </section>
+
+      <section class="grid-panel">
+        <div class="panel">
+          <h2>Monthly crash trend</h2>
+          <div class="chart-shell"><canvas id="monthlyChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <h2>Crashes by borough</h2>
+          <div class="chart-shell"><canvas id="boroughChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <h2>Top contributing factors</h2>
+          <div class="chart-shell"><canvas id="factorChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <h2>Top vehicle types</h2>
+          <div class="chart-shell"><canvas id="vehicleChart"></canvas></div>
+        </div>
+      </section>
+
+      <section class="panel table-panel">
+        <h2>Borough summary</h2>
+        <div id="borough-table"></div>
+      </section>
+
+      <section class="panel image-panel">
+        <h2>Generated summary graph</h2>
+        <img src="collision_graphs.png" alt="Collision graphs summary" />
+        <p class="caption">The graph image is generated from the CSV dataset and served from the same dashboard folder.</p>
+      </section>
+    </main>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
